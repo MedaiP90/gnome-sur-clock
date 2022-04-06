@@ -30,7 +30,9 @@ const Main = imports.ui.main;
 const SessionMode = imports.ui.sessionMode;
 
 class Extension {
-  constructor() {}
+  constructor() {
+    this._settings = ExtensionUtils.getSettings("com.medaip90.Sur_Clock");
+  }
 
   enable() {
     log(`enabling ${Me.metadata.name}`);
@@ -40,8 +42,7 @@ class Extension {
       return;
     }
 
-    this._loadSettings();
-    this._loadPanels();
+    this._loadPanels("_centerBox");
 
     // Only move the clock if it's in the centre box
     if (this._children.indexOf(this._dateMenu.container) != -1) {
@@ -60,11 +61,11 @@ class Extension {
     log(`disabling ${Me.metadata.name}`);
 
     // Do nothing if the clock isn't centred
-    if (Main.sessionMode.panel.center.indexOf("dateMenu") == this._position) {
+    if (Main.sessionMode.panel.center.indexOf("dateMenu") == -1) {
       return;
     }
 
-    this._loadPanels();
+    this._loadPanels("_rightBox");
 
     // Only move the clock back if it's in the right box
     if (this._children.indexOf(this._dateMenu.container) != -1) {
@@ -73,15 +74,11 @@ class Extension {
     }
   }
 
-  _loadPanels() {
+  _loadPanels(childName = "_centerBox") {
     this._centerBox = Main.panel._centerBox;
     this._rightBox = Main.panel._rightBox;
     this._dateMenu = Main.panel.statusArea["dateMenu"];
-    this._children = centerBox.get_children();
-  }
-
-  _loadSettings() {
-    this._settings = ExtensionUtils.getSettings("com.medaip90.Sur_Clock");
+    this._children = this[childName].get_children();
   }
 
   _getPosition(defaultPosition) {
