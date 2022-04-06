@@ -30,12 +30,10 @@ const Main = imports.ui.main;
 const SessionMode = imports.ui.sessionMode;
 
 class Extension {
-  constructor() {
-    this._settings = ExtensionUtils.getSettings("com.medaip90.Sur_Clock");
-  }
+  constructor() {}
 
   enable() {
-    log(`enabling ${Me.metadata.name}`);
+    this._settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.sur-clock");
 
     // Do nothing if the clock isn't centred
     if (Main.sessionMode.panel.center.indexOf("dateMenu") == -1) {
@@ -58,7 +56,7 @@ class Extension {
   }
 
   disable() {
-    log(`disabling ${Me.metadata.name}`);
+    this._settings = null;
 
     // Do nothing if the clock isn't centred
     if (Main.sessionMode.panel.center.indexOf("dateMenu") == -1) {
@@ -98,7 +96,5 @@ class Extension {
 }
 
 function init() {
-  log(`initializing ${Me.metadata.name}`);
-
   return new Extension();
 }
