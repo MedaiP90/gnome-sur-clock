@@ -1,0 +1,12 @@
+{
+  "name": "Sur Clock",
+  "description": "Move the clock to the left or the right of the system indicators like in MacOs.",
+  "shell-version": [
+    "40",
+    "41",
+    "42"
+  ],
+  "url" : "https://github.com/MedaiP90/gnome-sur-clock",
+  "uuid": "Sur_Clock@medaip90.com",
+  "version" : 1.0
+}
