@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema id="org.gnome.shell.extensions.sur-clock" path="/org/gnome/shell/extensions/SurClock/">
+  <schema id="com.medaip90.Sur_Clock" path="/com/medaip90/Sur_Clock/">
     <!-- See also: https://docs.gtk.org/glib/gvariant-format-strings.html -->
     <key name="clock-position" type="i">
       <default>0</default>

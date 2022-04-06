@@ -81,9 +81,7 @@ class Extension {
   }
 
   _loadSettings() {
-    this._settings = ExtensionUtils.getSettings(
-      "org.gnome.shell.extensions.sur-clock"
-    );
+    this._settings = ExtensionUtils.getSettings("com.medaip90.Sur_Clock");
   }
 
   _getPosition(defaultPosition) {
