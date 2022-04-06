@@ -43,7 +43,7 @@ const SurClockPrefsWidget = new GObject.Class({
   _init: function(params) {
     this.parent(params);
 
-    this._settings = ExtensionUtils.getSettings("com.medaip90.Sur_Clock");
+    this._settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.sur-clock");
 
     this.builder = new Gtk.Builder();
 
