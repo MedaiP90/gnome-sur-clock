@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkBox" id="prefs-container">
+    <property name="visible">0</property>
+    <property name="can_focus">0</property>
+    <property name="margin-start">6</property>
+    <property name="margin-end">6</property>
+    <property name="margin_top">6</property>
+    <property name="margin_bottom">6</property>
+    <property name="orientation">vertical</property>
+    <property name="spacing">2</property>
+    <child>
+      <object class="GtkBox">
+        <property name="can_focus">0</property>
+        <property name="hexpand">1</property>
+        <property name="vexpand">0</property>
+        <property name="homogeneous">1</property>
+
+        <child>
+          <object class="GtkListBoxRow">
+            <property name="width_request">100</property>
+            <property name="selectable">0</property>
+            <property name="child">
+              <object class="GtkBox">
+                <property name="can_focus">0</property>
+                <property name="margin_top">6</property>
+                <property name="margin_bottom">6</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="hexpand">1</property>
+                    <property name="can_focus">0</property>
+                    <property name="halign">start</property>
+                    <property name="margin-start">5</property>
+                    <property name="label" translatable="no">Position relative to system indicators</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="clock-position">
+                    <property name="can_focus">0</property>
+                    <property name="margin-end">5</property>
+                    <property name="active">0</property>
+                    <items>
+                      <item translatable="no">Left</item>
+                      <item translatable="no">Right</item>
+                    </items>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+
+      </object>
+    </child>
+  </object>
+</interface>
