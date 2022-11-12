@@ -4,7 +4,8 @@
   "shell-version": [
     "40",
     "41",
-    "42"
+    "42",
+    "43"
   ],
   "url" : "https://github.com/MedaiP90/gnome-sur-clock",
   "uuid": "Sur_Clock@medaip90.com",
